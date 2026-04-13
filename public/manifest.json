@@ -1,7 +1,7 @@
 {
-  "name": "Project 2030",
-  "short_name": "2030",
-  "description": "La tua dashboard personale verso il 2030",
+  "name": "Routine 2030",
+  "short_name": "Routine",
+  "description": "Costruisci la tua routine quotidiana e visualizza la tua crescita verso il 3 maggio 2030.",
   "start_url": "/dashboard",
   "display": "standalone",
   "background_color": "#0f0f0e",

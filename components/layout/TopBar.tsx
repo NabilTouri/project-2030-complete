@@ -3,6 +3,7 @@
 import { Settings, Bell } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useAppStore } from '@/stores/useAppStore';
+import { generateAvatarDataUri } from '@/lib/avatar';
 import Link from 'next/link';
 
 export default function TopBar() {
@@ -13,12 +14,15 @@ export default function TopBar() {
     : '??';
   const greeting = profile ? `Ciao, ${profile.first_name}` : 'Ciao';
 
+  const avatarSrc = profile?.avatar_url
+    || (profile ? generateAvatarDataUri(profile.first_name, profile.last_name) : '');
+
   return (
     <header className="sticky top-0 z-30 bg-background/80 backdrop-blur-xl border-b border-border md:border-0">
       <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4">
         <div className="flex items-center gap-3">
           <Avatar className="w-9 h-9">
-            <AvatarImage src={profile?.avatar_url || ''} alt={greeting} />
+            <AvatarImage src={avatarSrc} alt={greeting} />
             <AvatarFallback className="bg-primary/10 text-primary text-sm font-medium">
               {initials}
             </AvatarFallback>

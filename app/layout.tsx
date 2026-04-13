@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Project 2030 — Il tuo percorso",
-  description: "Dashboard personale per tracciare workout, routine giornaliera, piano alimentare e progressi verso il 2030.",
+  title: "Routine 2030 — Traccia la tua crescita",
+  description: "Costruisci la tua routine quotidiana e visualizza la tua crescita verso il 3 maggio 2030.",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",

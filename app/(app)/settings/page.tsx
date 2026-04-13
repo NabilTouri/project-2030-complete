@@ -11,6 +11,7 @@ import {
   User, Palette, Bell, Globe, LogOut, ChevronRight,
   Shield, Target, Utensils,
 } from 'lucide-react';
+import { generateAvatarDataUri } from '@/lib/avatar';
 import Link from 'next/link';
 import { toast } from 'sonner';
 
@@ -29,6 +30,9 @@ export default function SettingsPage() {
   const initials = profile
     ? `${profile.first_name.charAt(0)}${profile.last_name.charAt(0)}`
     : '??';
+
+  const avatarSrc = profile?.avatar_url
+    || (profile ? generateAvatarDataUri(profile.first_name, profile.last_name) : '');
 
   const settingsSections = [
     {
@@ -60,7 +64,7 @@ export default function SettingsPage() {
       <div className="rounded-xl bg-card border border-border p-4 mb-6">
         <div className="flex items-center gap-4">
           <Avatar className="w-14 h-14">
-            <AvatarImage src={profile?.avatar_url || ''} />
+            <AvatarImage src={avatarSrc} />
             <AvatarFallback className="bg-primary/10 text-primary font-medium text-lg">
               {initials}
             </AvatarFallback>

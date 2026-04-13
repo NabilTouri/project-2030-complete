@@ -63,7 +63,7 @@ export default function RegisterPage() {
           </div>
           <h1 className="text-2xl font-semibold tracking-tight">Crea il tuo account</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Inizia il tuo viaggio verso il 2030
+            Costruisci la tua routine verso il 3 maggio 2030
           </p>
         </div>
 
